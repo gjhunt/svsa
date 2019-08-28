@@ -43,7 +43,7 @@ class SupportVectorSpectrum:
         self.sigmabar = np.array(gamma*np.sum(self.sv_mat**2,1))
         self.sigmabar = self.sigmabar.reshape((self.sigmabar.size,1))
     
-    def pred_line(self,phi,unfold=False):
+    def predict(self,phi,unfold=False):
         delta = np.sum(phi**2,0)
         expon = self.sigma.dot(phi) - self.gamma * delta
         expnn = np.exp(expon-self.sigmabar)

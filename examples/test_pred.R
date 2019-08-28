@@ -1,0 +1,5 @@
+source('svsa.R')
+fit = get_fit("test_fit")
+test_params = array(c(.8,2,1.9,1,1.5),c(5,1))
+out = svsa(test_params,fit)
+plot(out,type='l')
