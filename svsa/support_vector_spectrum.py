@@ -70,14 +70,14 @@ class SupportVectorSpectrum:
         return sv_mat, alpha, alpha0
 
     def save_fit(self,fname='fit',type='csv'):
-        if type is "csv":
+        if type == "csv":
             np.savetxt(fname+'_beta0'+'.csv',np.array(self.beta0),delimiter=',')
             np.savetxt(fname+'_beta'+'.csv',np.array(self.beta),delimiter=',')
             np.savetxt(fname+'_sigma'+'.csv',np.array(self.sigma),delimiter=',')
             np.savetxt(fname+'_sigmabar'+'.csv',np.array(self.sigmabar),delimiter=',')
             np.savetxt(fname+'_gamma'+'.csv',np.array([self.gamma]),delimiter=',')
             np.savetxt(fname+'_x'+'.csv',np.array([self.x]),delimiter=',')
-        elif type is "mat":
+        elif type == "mat":
             d = {'beta0':self.beta0,
                  'beta':self.beta,
                  'sigma':self.sigma,

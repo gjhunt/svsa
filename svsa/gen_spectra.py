@@ -9,9 +9,9 @@ from .crbs7 import crbs7
 def gen_spectra(y_seq,ri_seq,ef_seq,ci_seq,ct_seq,x_seq,scatter_type="sptsig",model="s6",file=None):
 
     all_combs = itertools.product(y_seq,ri_seq,ef_seq,ci_seq,ct_seq)
-    if model is "s6":
+    if model == "s6":
         all_signals = [crbs6(p[0],p[1],p[2],p[3],p[4],x_seq) for p in all_combs]
-    if model is "s7":
+    if model == "s7":
         all_signals = [crbs7(p[0],p[1],p[2],p[3],p[4],x_seq) for p in all_combs]
 
     lineshapes = [out[scatter_type] for out in all_signals]
